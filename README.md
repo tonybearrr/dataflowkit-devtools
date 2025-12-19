@@ -50,4 +50,8 @@ All processing happens locally in your browser.
 
 Built and maintained by **[Anton Bulavenko](https://tonylab.dev)**
 
+## ☕ Support
+If you find this work useful, you can support independent open source software here:  
+[Support](https://send.monobank.ua/jar/ABUXaikGMB)
+
 ---
