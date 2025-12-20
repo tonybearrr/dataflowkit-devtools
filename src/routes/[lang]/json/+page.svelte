@@ -218,10 +218,10 @@
 	`}
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-4 py-8">
-	<header class="mb-8">
-		<h1 class="text-3xl font-bold mb-3">{tStringReactive('json.heading', $locale)}</h1>
-		<p class="text-[var(--color-text-muted)] max-w-2xl">
+<div class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
+	<header class="mb-6 sm:mb-8">
+		<h1 class="text-2xl sm:text-3xl font-bold mb-3">{tStringReactive('json.heading', $locale)}</h1>
+		<p class="text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl">
 			{tStringReactive('json.subtitle', $locale)}
 		</p>
 	</header>
@@ -236,24 +236,24 @@
 		</div>
 	{/if}
 
-	<div class="grid lg:grid-cols-2 gap-8">
-		<div class="space-y-4">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+		<div class="space-y-4 min-w-0">
 			<div
-				class="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+				class="p-3 sm:p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
 			>
-				<div class="flex items-center justify-between mb-3">
+				<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
 					<span class="text-sm font-medium">{tStringReactive('json.input', $locale)}</span>
 					<div class="flex items-center gap-2">
 						<button
 							onclick={loadExample}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
+							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
 						>
 							{tStringReactive('request.example', $locale)}
 						</button>
 					</div>
 				</div>
 
-				<div class="relative flex rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] h-64">
+				<div class="relative flex rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] h-48 sm:h-64">
 					<div
 						bind:this={lineNumbersEl}
 						class="flex-shrink-0 w-10 py-2 bg-[var(--color-bg-tertiary)] border-r border-[var(--color-border)] overflow-hidden select-none pointer-events-none"
@@ -281,31 +281,31 @@
 				<div class="flex flex-wrap items-center gap-2 mt-3">
 					<button
 						onclick={validate}
-						class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors"
+						class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors whitespace-nowrap"
 					>
 						{tStringReactive('json.validate', $locale)}
 					</button>
 					<button
 						onclick={handlePrettify}
-						class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors"
+						class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors whitespace-nowrap"
 					>
 						{tStringReactive('json.prettify', $locale)}
 					</button>
 					<button
 						onclick={handleMinify}
-						class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors"
+						class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-colors whitespace-nowrap"
 					>
 						{tStringReactive('json.minify', $locale)}
 					</button>
 					<button
 						onclick={handleClear}
-						class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors"
+						class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors whitespace-nowrap"
 					>
 						{tStringReactive('common.clear', $locale)}
 					</button>
 				</div>
 
-				<div class="flex flex-wrap items-center gap-4 mt-3 text-xs">
+				<div class="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-4 mt-3 text-xs">
 					<label class="flex items-center gap-2 cursor-pointer">
 						<input
 							type="checkbox"

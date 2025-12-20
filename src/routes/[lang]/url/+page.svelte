@@ -134,7 +134,7 @@
 	}
 
 	function loadExample() {
-		urlInput = 'https://api.example.com/v1/users?id=42&active=true&name=John%20Doe#section';
+		urlInput = 'https://api.example.com/v2/users?role=admin&status=active&limit=50&offset=0&sort=created_desc&include=profile,settings#results';
 	}
 
 	const protocolDisplay = $derived(parsedUrl.protocol.replace(':', ''));
@@ -180,56 +180,66 @@
 	`}
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-4 py-8">
-	<header class="mb-8">
-		<h1 class="text-3xl font-bold mb-3">{tStringReactive('url.heading', $locale)}</h1>
-		<p class="text-[var(--color-text-muted)] max-w-2xl">
+<div class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
+	<header class="mb-6 sm:mb-8">
+		<h1 class="text-2xl sm:text-3xl font-bold mb-3">{tStringReactive('url.heading', $locale)}</h1>
+		<p class="text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl">
 			{tStringReactive('url.subtitle', $locale)}
 		</p>
 	</header>
 
-	<div class="mb-8 p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-		<div class="flex items-center justify-between mb-3">
-			<span class="text-sm font-medium">{tStringReactive('url.enterUrl', $locale)}</span>
-		</div>
-		
-		<div class="flex gap-2">
-			<input
-				type="text"
-				bind:value={urlInput}
-				placeholder="https://api.example.com/v1/users?id=42&active=true"
-				class="flex-1 min-w-0 px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)] placeholder:text-[var(--color-text-muted)]/50"
-				spellcheck="false"
-			/>
-		</div>
-
-		<div class="flex flex-wrap items-center gap-2 mt-3">
-			<button
-				onclick={handleParse}
-				class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)] hover:bg-[var(--color-accent)]/20 transition-colors"
-			>
-				{tStringReactive('common.parse', $locale)}
-			</button>
-			<button
-				onclick={handleClear}
-				class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors"
-			>
-				{tStringReactive('common.clear', $locale)}
-			</button>
-			<button
-				onclick={() => copyToClipboard(rebuiltUrl)}
-				disabled={!rebuiltUrl}
-				class="px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-			>
-				{tStringReactive('url.copyUrl', $locale)}
-			</button>
-		</div>
-
-		{#if error}
-			<div class="mt-3 px-3 py-2 rounded-lg border border-[var(--color-error)]/30 bg-[var(--color-error)]/10">
-				<p class="text-sm text-[var(--color-error)]">{error}</p>
+	<div class="mb-6 sm:mb-8">
+		<div class="p-3 sm:p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+				<span class="text-sm font-medium">{tStringReactive('url.enterUrl', $locale)}</span>
+				<div class="flex flex-wrap gap-2">
+					<button
+						onclick={loadExample}
+						class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
+					>
+						{tStringReactive('url.example', $locale)}
+					</button>
+				</div>
 			</div>
-		{/if}
+			
+			<div class="flex gap-2">
+				<input
+					type="text"
+					bind:value={urlInput}
+					placeholder="https://api.example.com/v1/users?id=42&active=true"
+					class="flex-1 min-w-0 px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)] placeholder:text-[var(--color-text-muted)]/50"
+					spellcheck="false"
+				/>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-2 mt-3">
+				<button
+					onclick={handleParse}
+					class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)] hover:bg-[var(--color-accent)]/20 transition-colors whitespace-nowrap"
+				>
+					{tStringReactive('common.parse', $locale)}
+				</button>
+				<button
+					onclick={handleClear}
+					class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors whitespace-nowrap"
+				>
+					{tStringReactive('common.clear', $locale)}
+				</button>
+				<button
+					onclick={() => copyToClipboard(rebuiltUrl)}
+					disabled={!rebuiltUrl}
+					class="px-2 sm:px-3 py-1.5 text-xs rounded-md border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+				>
+					{tStringReactive('url.copyUrl', $locale)}
+				</button>
+			</div>
+
+			{#if error}
+				<div class="mt-3 px-3 py-2 rounded-lg border border-[var(--color-error)]/30 bg-[var(--color-error)]/10">
+					<p class="text-sm text-[var(--color-error)]">{error}</p>
+				</div>
+			{/if}
+		</div>
 	</div>
 
 	<div class="grid lg:grid-cols-2 gap-8 overflow-hidden">

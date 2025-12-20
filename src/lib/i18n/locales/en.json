@@ -306,6 +306,7 @@
 		"heading": "URL Inspector & Builder",
 		"subtitle": "Parse URLs into components, view and edit query parameters, encode/decode URL parts, and rebuild the final URL. All processing happens locally in your browser.",
 		"enterUrl": "Enter URL",
+		"example": "Example",
 		"parsedComponents": "Parsed Components",
 		"protocol": "Protocol",
 		"hostname": "Hostname",

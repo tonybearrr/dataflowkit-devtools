@@ -5,9 +5,9 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { locale, tStringReactive, getPath, type Locale } from '$lib/i18n';
-	// import faviconSvg from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
+	let mobileMenuOpen = $state(false);
 
 	const currentLang = $derived($locale);
 	const currentPath = $derived($page.url.pathname);
@@ -17,28 +17,33 @@
 		const pathWithoutLang = currentPath.replace(/^\/(en|uk|ru)/, '') || '/';
 		goto(`/${newLang}${pathWithoutLang}`);
 	}
+
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
+	}
 </script>
 
 <svelte:head>
 	<link rel="icon" type="image/x-icon" href={favicon} />
-	<!-- <link rel="icon" type="image/svg+xml" href={faviconSvg} /> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
 		rel="stylesheet"
 	/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col bg-[var(--color-bg)]">
-	<header class="border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-		<div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-			<div class="flex items-center gap-8">
+	<header class="border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)] sticky top-0 z-50">
+		<div class="max-w-6xl mx-auto px-4">
+			<div class="h-14 flex items-center justify-between">
 				<a href={getPath('/', langFromPath)} class="flex items-center gap-2 text-lg font-semibold tracking-tight hover:text-[var(--color-accent)] transition-colors">
 					<img src={logo} alt={tStringReactive('common.devToolbox', $locale)} class="h-8 w-auto" />
-					<span>{tStringReactive('common.devToolbox', $locale)}</span>
+					<span class="hidden sm:inline">{tStringReactive('common.devToolbox', $locale)}</span>
 				</a>
-				<nav class="flex items-center gap-6">
+
+				<nav class="hidden lg:flex items-center gap-6">
 					<a
 						href={getPath('/jwt', langFromPath)}
 						class="text-sm transition-colors {$page.url.pathname.includes('/jwt') ? 'text-[var(--color-text)]' : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'}"
@@ -88,32 +93,117 @@
 						{tStringReactive('common.privacy', $locale)}
 					</a>
 				</nav>
+
+				<div class="flex items-center gap-2 sm:gap-4">
+					<a
+						href={getPath('/about', langFromPath)}
+						class="hidden md:block text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+					>
+						{tStringReactive('common.madeBy', $locale)}
+					</a>
+					<a
+						href="https://send.monobank.ua/jar/ABUXaikGMB"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-xs sm:text-sm px-2 sm:px-3 py-1.5 rounded-md bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-colors whitespace-nowrap"
+					>
+						{tStringReactive('common.donate', $locale)}
+					</a>
+					<select
+						value={langFromPath}
+						onchange={(e) => switchLanguage(e.currentTarget.value as Locale)}
+						class="text-xs px-2 py-1 rounded border border-[var(--color-border)] bg-[var(--color-bg-secondary)] hover:border-[var(--color-accent)] focus:outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer"
+					>
+						<option value="en">EN</option>
+						<option value="uk">UK</option>
+						<option value="ru">RU</option>
+					</select>
+					
+					<button
+						onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+						class="lg:hidden p-2 hover:bg-[var(--color-bg-tertiary)] rounded transition-colors"
+						aria-label="Toggle menu"
+					>
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							{#if mobileMenuOpen}
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+							{:else}
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							{/if}
+						</svg>
+					</button>
+				</div>
 			</div>
-			<div class="flex items-center gap-4">
-				<a
-					href={getPath('/about', langFromPath)}
-					class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
-				>
-					{tStringReactive('common.madeBy', $locale)}
-				</a>
-				<a
-					href="https://send.monobank.ua/jar/ABUXaikGMB"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="text-sm px-3 py-1.5 rounded-md bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-colors"
-				>
-					{tStringReactive('common.donate', $locale)}
-				</a>
-				<select
-					value={langFromPath}
-					onchange={(e) => switchLanguage(e.currentTarget.value as Locale)}
-					class="text-xs px-2 py-1 rounded border border-[var(--color-border)] bg-[var(--color-bg-secondary)] hover:border-[var(--color-accent)] focus:outline-none focus:border-[var(--color-accent)] transition-colors cursor-pointer"
-				>
-					<option value="en">EN</option>
-					<option value="uk">UK</option>
-					<option value="ru">RU</option>
-				</select>
-			</div>
+
+			{#if mobileMenuOpen}
+				<nav class="lg:hidden py-4 border-t border-[var(--color-border)]">
+					<div class="flex flex-col space-y-3">
+						<a
+							href={getPath('/jwt', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/jwt') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.jwt', $locale)}
+						</a>
+						<a
+							href={getPath('/cron', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/cron') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.cron', $locale)}
+						</a>
+						<a
+							href={getPath('/timestamp', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/timestamp') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.timestamp', $locale)}
+						</a>
+						<a
+							href={getPath('/request', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/request') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.request', $locale)}
+						</a>
+						<a
+							href={getPath('/json', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/json') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.json', $locale)}
+						</a>
+						<a
+							href={getPath('/base64', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/base64') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.base64', $locale)}
+						</a>
+						<a
+							href={getPath('/url', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/url') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('nav.url', $locale)}
+						</a>
+						<a
+							href={getPath('/privacy', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/privacy') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('common.privacy', $locale)}
+						</a>
+						<a
+							href={getPath('/about', langFromPath)}
+							onclick={closeMobileMenu}
+							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] md:hidden {$page.url.pathname.includes('/about') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
+						>
+							{tStringReactive('common.madeBy', $locale)}
+						</a>
+					</div>
+				</nav>
+			{/if}
 		</div>
 	</header>
 

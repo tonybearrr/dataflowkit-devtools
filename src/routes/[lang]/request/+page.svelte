@@ -46,6 +46,9 @@
 
 	// Generate code on changes
 	$effect(() => {
+		// Track all dependencies
+		const _ = [url, method, JSON.stringify(query), JSON.stringify(headers), bodyType, bodyValue, activeTab];
+		
 		if (debounceTimer) clearTimeout(debounceTimer);
 		debounceTimer = setTimeout(generateCode, 300);
 	});
@@ -233,38 +236,38 @@
 	`}
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-4 py-8">
-	<header class="mb-8">
-		<h1 class="text-3xl font-bold mb-3">{tStringReactive('request.heading', $locale)}</h1>
-		<p class="text-[var(--color-text-muted)] max-w-2xl">
+<div class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
+	<header class="mb-6 sm:mb-8">
+		<h1 class="text-2xl sm:text-3xl font-bold mb-3">{tStringReactive('request.heading', $locale)}</h1>
+		<p class="text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl">
 			{tStringReactive('request.subtitle', $locale)}
 		</p>
 	</header>
 
-	<div class="grid lg:grid-cols-2 gap-8">
-		<div class="space-y-6">
+	<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+		<div class="space-y-6 min-w-0">
 			<div
-				class="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+				class="p-3 sm:p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
 			>
-				<div class="flex items-center justify-between mb-3">
+				<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
 					<span class="text-sm font-medium">{tStringReactive('request.request', $locale)}</span>
 					<div class="flex gap-2">
 						<button
 							onclick={loadExample}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
+							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
 						>
 							{tStringReactive('request.example', $locale)}
 						</button>
 						<button
 							onclick={resetForm}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors"
+							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-error)] text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors whitespace-nowrap"
 						>
 							{tStringReactive('request.reset', $locale)}
 						</button>
 					</div>
 				</div>
 
-				<div class="flex gap-2">
+				<div class="flex flex-col sm:flex-row gap-2">
 					<select
 						bind:value={method}
 						class="px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-medium focus:outline-none focus:border-[var(--color-accent)]"
@@ -278,19 +281,19 @@
 						type="text"
 						bind:value={url}
 						placeholder="https://api.example.com/endpoint"
-						class="flex-1 px-4 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] font-mono text-sm focus:outline-none focus:border-[var(--color-accent)] placeholder:text-[var(--color-text-muted)]/50"
+						class="flex-1 min-w-0 px-4 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] font-mono text-sm focus:outline-none focus:border-[var(--color-accent)] placeholder:text-[var(--color-text-muted)]/50"
 					/>
 				</div>
 			</div>
 
 			<div
-				class="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+				class="p-3 sm:p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
 			>
-				<div class="flex items-center justify-between mb-3">
+				<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
 					<span class="text-sm font-medium">{tStringReactive('request.queryParams', $locale)}</span>
 					<button
 						onclick={addQueryParam}
-						class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
+						class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap self-start sm:self-auto"
 					>
 						+ {tStringReactive('request.add', $locale)}
 					</button>
@@ -298,27 +301,27 @@
 
 				<div class="space-y-2">
 					{#each query as param (param.id)}
-						<div class="flex items-center gap-2">
+						<div class="flex flex-wrap sm:flex-nowrap items-center gap-2">
 							<input
 								type="checkbox"
 								bind:checked={param.enabled}
-								class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)]"
+								class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)] flex-shrink-0"
 							/>
 							<input
 								type="text"
 								bind:value={param.key}
 								placeholder={tStringReactive('request.key', $locale)}
-								class="flex-1 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
+								class="flex-1 min-w-0 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
 							/>
 							<input
 								type="text"
 								bind:value={param.value}
 								placeholder={tStringReactive('request.value', $locale)}
-								class="flex-1 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
+								class="flex-1 min-w-0 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
 							/>
 							<button
 								onclick={() => removeQueryParam(param.id)}
-								class="p-1.5 rounded hover:bg-[var(--color-error)]/10 text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors"
+								class="p-1.5 rounded hover:bg-[var(--color-error)]/10 text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors flex-shrink-0"
 							>
 								✕
 							</button>
@@ -328,65 +331,67 @@
 			</div>
 
 			<div
-				class="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
+				class="p-3 sm:p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)]"
 			>
-				<div class="flex items-center justify-between mb-3">
-					<div class="flex items-center gap-3">
-						<span class="text-sm font-medium">{tStringReactive('request.headers', $locale)}</span>
-						<label class="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] cursor-pointer">
-							<input
-								type="checkbox"
-								bind:checked={maskHeaders}
-								class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)]"
-							/>
-							{tStringReactive('request.maskValues', $locale)}
-						</label>
-					</div>
-					<div class="flex gap-2">
-						<button
-							onclick={addJsonHeader}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
-						>
-							+ {tStringReactive('request.json', $locale)}
-						</button>
-						<button
-							onclick={addAuthHeader}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
-						>
-							+ Auth
-						</button>
-						<button
-							onclick={addHeader}
-							class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors"
-						>
-							+ {tStringReactive('request.add', $locale)}
-						</button>
+				<div class="flex flex-col gap-3 mb-3">
+					<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+						<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+							<span class="text-sm font-medium">{tStringReactive('request.headers', $locale)}</span>
+							<label class="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] cursor-pointer">
+								<input
+									type="checkbox"
+									bind:checked={maskHeaders}
+									class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)] flex-shrink-0"
+								/>
+								{tStringReactive('request.maskValues', $locale)}
+							</label>
+						</div>
+						<div class="flex flex-wrap gap-2">
+							<button
+								onclick={addJsonHeader}
+								class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
+							>
+								+ {tStringReactive('request.json', $locale)}
+							</button>
+							<button
+								onclick={addAuthHeader}
+								class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
+							>
+								+ Auth
+							</button>
+							<button
+								onclick={addHeader}
+								class="text-xs px-2 py-1 rounded border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-colors whitespace-nowrap"
+							>
+								+ {tStringReactive('request.add', $locale)}
+							</button>
+						</div>
 					</div>
 				</div>
 
 				<div class="space-y-2">
 					{#each headers as header (header.id)}
-						<div class="flex items-center gap-2">
+						<div class="flex flex-wrap sm:flex-nowrap items-center gap-2">
 							<input
 								type="checkbox"
 								bind:checked={header.enabled}
-								class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)]"
+								class="rounded border-[var(--color-border)] bg-[var(--color-bg-tertiary)] flex-shrink-0"
 							/>
 							<input
 								type="text"
 								bind:value={header.key}
 								placeholder="Header-Name"
-								class="flex-1 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
+								class="flex-1 min-w-0 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
 							/>
 							<input
 								type={maskHeaders ? 'password' : 'text'}
 								bind:value={header.value}
 								placeholder={tStringReactive('request.value', $locale)}
-								class="flex-1 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
+								class="flex-1 min-w-0 px-2 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] text-sm font-mono focus:outline-none focus:border-[var(--color-accent)]"
 							/>
 							<button
 								onclick={() => removeHeader(header.id)}
-								class="p-1.5 rounded hover:bg-[var(--color-error)]/10 text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors"
+								class="p-1.5 rounded hover:bg-[var(--color-error)]/10 text-[var(--color-text-muted)] hover:text-[var(--color-error)] transition-colors flex-shrink-0"
 							>
 								✕
 							</button>

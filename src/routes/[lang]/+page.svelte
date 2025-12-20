@@ -61,10 +61,10 @@
 	`}
 </svelte:head>
 
-<div class="max-w-6xl mx-auto px-4 py-16">
-	<div class="text-center mb-16">
-		<h1 class="text-4xl font-bold mb-4">{tStringReactive('home.title', $locale)}</h1>
-		<p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto">
+<div class="max-w-6xl mx-auto px-4 py-8 sm:py-16">
+	<div class="text-center mb-8 sm:mb-16">
+		<h1 class="text-3xl sm:text-4xl font-bold mb-4">{tStringReactive('home.title', $locale)}</h1>
+		<p class="text-lg sm:text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto px-4">
 			{tStringReactive('home.description', $locale)}
 		</p>
 	</div>
