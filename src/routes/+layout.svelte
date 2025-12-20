@@ -1,11 +1,15 @@
 <script lang="ts">
 	import '../app.css';
 	import logo from '$lib/assets/logo.png';
+	import favicon from '$lib/assets/favicon.ico';
+	// import faviconSvg from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
+	<link rel="icon" type="image/x-icon" href={favicon} />
+	<!-- <link rel="icon" type="image/svg+xml" href={faviconSvg} /> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link

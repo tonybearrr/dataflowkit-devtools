@@ -163,6 +163,38 @@
 		name="description"
 		content="Encode and decode Base64, Base64URL, and Hex locally. UTF-8 safe. Convert between variants and copy results instantly."
 	/>
+	<meta property="og:title" content="Base64 Converter - Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Encode and decode Base64, Base64URL, and Hex locally. UTF-8 safe. Convert between variants and copy results instantly."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/base64" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Base64 Converter - Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Encode and decode Base64, Base64URL, and Hex locally. UTF-8 safe. Convert between variants and copy results instantly."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/base64" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Base64 Converter",
+			"description": "Encode and decode Base64, Base64URL, and Hex locally. UTF-8 safe. Convert between variants and copy results instantly.",
+			"url": "https://devtools.dataflowkit.dev/base64",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-7xl mx-auto px-4 py-8">

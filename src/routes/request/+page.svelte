@@ -193,6 +193,38 @@
 		name="description"
 		content="Build API requests and generate curl, fetch, and axios snippets instantly. Works locally, no tracking."
 	/>
+	<meta property="og:title" content="API Request Builder – Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Build API requests and generate curl, fetch, and axios snippets instantly. Works locally, no tracking."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/request" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="API Request Builder – Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Build API requests and generate curl, fetch, and axios snippets instantly. Works locally, no tracking."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/request" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "API Request Builder",
+			"description": "Build API requests and generate curl, fetch, and axios snippets instantly. Works locally, no tracking.",
+			"url": "https://devtools.dataflowkit.dev/request",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-7xl mx-auto px-4 py-8">

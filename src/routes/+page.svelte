@@ -4,6 +4,52 @@
 		name="description"
 		content="Fast, privacy-first tools for developers. JWT Inspector and more. Everything runs locally in your browser."
 	/>
+	<meta property="og:title" content="Dev Toolbox - Privacy-First Developer Tools" />
+	<meta
+		property="og:description"
+		content="Fast, privacy-first tools for developers. JWT Inspector and more. Everything runs locally in your browser."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Dev Toolbox - Privacy-First Developer Tools" />
+	<meta
+		name="twitter:description"
+		content="Fast, privacy-first tools for developers. JWT Inspector and more. Everything runs locally in your browser."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"name": "Dev Toolbox",
+			"description": "Fast, privacy-first tools for developers. JWT Inspector and more. Everything runs locally in your browser.",
+			"url": "https://devtools.dataflowkit.dev",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"creator": {
+				"@type": "Person",
+				"name": "Anton Bulavenko",
+				"url": "https://tonylab.dev"
+			},
+			"featureList": [
+				"JWT Inspector",
+				"Cron Explainer",
+				"Timestamp Converter",
+				"API Request Builder",
+				"JSON Formatter",
+				"Base64 Converter",
+				"URL Inspector"
+			]
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-6xl mx-auto px-4 py-16">

@@ -126,6 +126,38 @@
 		name="description"
 		content="Convert Unix timestamps, ISO dates, and milliseconds. Preview in local time or UTC instantly."
 	/>
+	<meta property="og:title" content="Timestamp Converter – Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Convert Unix timestamps, ISO dates, and milliseconds. Preview in local time or UTC instantly."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/timestamp" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Timestamp Converter – Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Convert Unix timestamps, ISO dates, and milliseconds. Preview in local time or UTC instantly."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/timestamp" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Timestamp Converter",
+			"description": "Convert Unix timestamps, ISO dates, and milliseconds. Preview in local time or UTC instantly.",
+			"url": "https://devtools.dataflowkit.dev/timestamp",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-6xl mx-auto px-4 py-8">

@@ -178,6 +178,38 @@
 		name="description"
 		content="Prettify, minify, validate, and inspect JSON locally. Search keys/values and copy clean output instantly."
 	/>
+	<meta property="og:title" content="JSON Formatter & Inspector – Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Prettify, minify, validate, and inspect JSON locally. Search keys/values and copy clean output instantly."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/json" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="JSON Formatter & Inspector – Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Prettify, minify, validate, and inspect JSON locally. Search keys/values and copy clean output instantly."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/json" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "JSON Formatter & Inspector",
+			"description": "Prettify, minify, validate, and inspect JSON locally. Search keys/values and copy clean output instantly.",
+			"url": "https://devtools.dataflowkit.dev/json",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-7xl mx-auto px-4 py-8">

@@ -110,6 +110,38 @@
 		name="description"
 		content="Decode and inspect JSON Web Tokens (JWT) locally in your browser. View header, payload, check expiration, and more. No data sent to servers."
 	/>
+	<meta property="og:title" content="JWT Inspector - Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Decode and inspect JSON Web Tokens (JWT) locally in your browser. View header, payload, check expiration, and more. No data sent to servers."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/jwt" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="JWT Inspector - Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Decode and inspect JSON Web Tokens (JWT) locally in your browser. View header, payload, check expiration, and more. No data sent to servers."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/jwt" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "JWT Inspector",
+			"description": "Decode and inspect JSON Web Tokens (JWT) locally in your browser. View header, payload, check expiration, and more. No data sent to servers.",
+			"url": "https://devtools.dataflowkit.dev/jwt",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-6xl mx-auto px-4 py-8">

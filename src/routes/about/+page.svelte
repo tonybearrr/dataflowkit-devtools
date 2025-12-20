@@ -1,6 +1,30 @@
 <svelte:head>
 	<title>About - Dev Toolbox</title>
 	<meta name="description" content="About Anton Bulavenko, the maker of Dev Toolbox." />
+	<meta property="og:title" content="About - Dev Toolbox" />
+	<meta property="og:description" content="About Anton Bulavenko, the maker of Dev Toolbox." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/about" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="About - Dev Toolbox" />
+	<meta name="twitter:description" content="About Anton Bulavenko, the maker of Dev Toolbox." />
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/about" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "AboutPage",
+			"name": "About - Dev Toolbox",
+			"description": "About Anton Bulavenko, the maker of Dev Toolbox.",
+			"url": "https://devtools.dataflowkit.dev/about",
+			"mainEntity": {
+				"@type": "Person",
+				"name": "Anton Bulavenko",
+				"url": "https://tonylab.dev"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-2xl mx-auto px-4 py-16">

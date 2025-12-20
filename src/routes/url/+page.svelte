@@ -140,6 +140,38 @@
 		name="description"
 		content="Parse, inspect, and build URLs. Edit query parameters, encode values, and copy clean URLs instantly."
 	/>
+	<meta property="og:title" content="URL Inspector & Builder – Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Parse, inspect, and build URLs. Edit query parameters, encode values, and copy clean URLs instantly."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/url" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="URL Inspector & Builder – Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Parse, inspect, and build URLs. Edit query parameters, encode values, and copy clean URLs instantly."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/url" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "URL Inspector & Builder",
+			"description": "Parse, inspect, and build URLs. Edit query parameters, encode values, and copy clean URLs instantly.",
+			"url": "https://devtools.dataflowkit.dev/url",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-7xl mx-auto px-4 py-8">

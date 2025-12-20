@@ -4,6 +4,31 @@
 		name="description"
 		content="Privacy policy for Dev Toolbox. We don't collect, store, or transmit any data."
 	/>
+	<meta property="og:title" content="Privacy - Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Privacy policy for Dev Toolbox. We don't collect, store, or transmit any data."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/privacy" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Privacy - Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Privacy policy for Dev Toolbox. We don't collect, store, or transmit any data."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/privacy" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Privacy - Dev Toolbox",
+			"description": "Privacy policy for Dev Toolbox. We don't collect, store, or transmit any data.",
+			"url": "https://devtools.dataflowkit.dev/privacy"
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-2xl mx-auto px-4 py-16">

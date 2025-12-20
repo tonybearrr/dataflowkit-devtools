@@ -70,6 +70,38 @@
 		name="description"
 		content="Explain cron expressions in plain English and preview upcoming run times in your timezone."
 	/>
+	<meta property="og:title" content="Cron Explainer & Simulator – Dev Toolbox" />
+	<meta
+		property="og:description"
+		content="Explain cron expressions in plain English and preview upcoming run times in your timezone."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://devtools.dataflowkit.dev/cron" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Cron Explainer & Simulator – Dev Toolbox" />
+	<meta
+		name="twitter:description"
+		content="Explain cron expressions in plain English and preview upcoming run times in your timezone."
+	/>
+	<link rel="canonical" href="https://devtools.dataflowkit.dev/cron" />
+	{@html `
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Cron Explainer & Simulator",
+			"description": "Explain cron expressions in plain English and preview upcoming run times in your timezone.",
+			"url": "https://devtools.dataflowkit.dev/cron",
+			"applicationCategory": "DeveloperApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+		</script>
+	`}
 </svelte:head>
 
 <div class="max-w-6xl mx-auto px-4 py-8">
