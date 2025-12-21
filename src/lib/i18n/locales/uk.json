@@ -3,9 +3,9 @@
 		"devToolbox": "Dev Toolbox",
 		"madeBy": "Зроблено Антоном",
 		"donate": "Підтримати",
-		"privacy": "Приватність",
+		"privacy": "Політика приватності",
 		"about": "Про проєкт",
-		"privacyFirst": "Приватність на першому місці. Без відстеження. Локально.",
+		"privacyFirst": "Локальні інструменти розробника для щоденної роботи.",
 		"noTracking": "Без відстеження",
 		"localOnly": "Локально",
 		"builtBy": "Один з інструментів",
@@ -25,40 +25,40 @@
 	},
 	"home": {
 		"title": "Dev Toolbox",
-		"description": "Швидкі інструменти для розробників з акцентом на приватність. Без бекенду. Без відстеження. Все працює локально у вашому браузері.",
+		"description": "Швидкі інструменти для щоденної технічної роботи розробників. Працюють локально у вашому браузері.",
 		"jwtInspector": {
 			"title": "JWT Inspector",
-			"description": "Декодуйте та перевіряйте JSON Web Tokens. Переглядайте заголовок, payload та перевіряйте термін дії.",
+			"description": "Декодування та перевірка JSON Web Tokens. Переглядайте заголовоки, payload, термін дії, тощо.",
 			"tags": ["Base64URL", "Claims", "Термін дії"]
 		},
 		"cronExplainer": {
-			"title": "Cron",
-			"description": "Пояснюйте cron вирази простою мовою та переглядайте майбутні виконання.",
-			"tags": ["Планувальник", "Симулятор", "5-полів"]
+			"title": "Cron Explainer",
+			"description": "Пояснення cron виразів простою мовою. Зручний перегляд черги виконаннь.",
+			"tags": ["Планувальник", "Симулятор", "Cron"]
 		},
 		"timestampConverter": {
 			"title": "Timestamp Converter",
-			"description": "Конвертуйте Unix timestamps, ISO дати та мілісекунди. Локальний час або UTC.",
+			"description": "Конвертація Unix timestamps, ISO дат і мілісекунд. Працюйте з локальним часом або UTC.",
 			"tags": ["Unix", "ISO 8601", "Часовий пояс"]
 		},
 		"apiRequestBuilder": {
 			"title": "API Request Builder",
-			"description": "Створюйте HTTP запити та генеруйте код для curl, fetch, axios.",
-			"tags": ["curl", "fetch", "axios"]
+			"description": "Створення HTTP запитів та генерація коду для curl, fetch, axios або httpie.",
+			"tags": ["curl", "fetch", "axios", "httpie"]
 		},
 		"jsonFormatter": {
 			"title": "JSON Formatter",
-			"description": "Форматуйте, мінімізуйте, валідуйте та перевіряйте JSON з деревом.",
-			"tags": ["Форматування", "Дерево", "Пошук"]
+			"description": "Форматування, мінімізація, валідація та зручна перевірка JSON у вигляді дерева.",
+			"tags": ["Форматування", "Дерево", "JSON"]
 		},
 		"base64Converter": {
 			"title": "Base64 Converter",
-			"description": "Кодуйте та декодуйте Base64, Base64URL та Hex. Безпечно для UTF-8.",
-			"tags": ["Base64", "Base64URL", "Hex"]
+			"description": "Кодування та декодування Base64, Base64URL та Hex. Безпечно для UTF-8.",
+			"tags": ["Base64", "Base64URL", "Hex", "Plain text"]
 		},
 		"urlInspector": {
 			"title": "URL Inspector",
-			"description": "Парсіть, перевіряйте та створюйте URL. Редагуйте параметри запиту та копіюйте чисті URL.",
+			"description": "Парсінг, перевірка та створення URL. Редагуйте параметри запиту та копіюйте готові URL.",
 			"tags": ["Параметри", "Кодування", "Конструктор"]
 		}
 	},

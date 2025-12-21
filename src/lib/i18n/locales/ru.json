@@ -3,9 +3,9 @@
 		"devToolbox": "Dev Toolbox",
 		"madeBy": "Сделано Антоном",
 		"donate": "Поддержать",
-		"privacy": "Приватность",
+		"privacy": "Политика приватности",
 		"about": "О проекте",
-		"privacyFirst": "Приватность на первом месте. Без отслеживания. Локально.",
+		"privacyFirst": "Локальные инструменты разработчика для ежедневной работы.",
 		"noTracking": "Без отслеживания",
 		"localOnly": "Локально",
 		"builtBy": "Один из инструментов",
@@ -25,40 +25,40 @@
 	},
 	"home": {
 		"title": "Dev Toolbox",
-		"description": "Быстрые инструменты для разработчиков с акцентом на приватность. Без бэкенда. Без отслеживания. Всё работает локально в вашем браузере.",
+		"description": "Быстрые инструменты для повседневной технической работы разработчиков. Работает локально в вашем браузере.",
 		"jwtInspector": {
 			"title": "JWT Inspector",
-			"description": "Декодируйте и проверяйте JSON Web Tokens. Просматривайте заголовок, payload и проверяйте срок действия.",
+			"description": "Декодирование и проверка JSON Web Tokens. Просматривайте заголовоки, payload срок действия и т.д.",
 			"tags": ["Base64URL", "Claims", "Срок действия"]
 		},
 		"cronExplainer": {
-			"title": "Cron",
-			"description": "Объясняйте cron выражения простым языком и просматривайте будущие выполнения.",
+			"title": "Cron Explainer",
+			"description": "Объяснение cron выражений простым языком. Удобный просмотр очереди выполнений.",
 			"tags": ["Планировщик", "Симулятор", "5-полей"]
 		},
 		"timestampConverter": {
 			"title": "Timestamp Converter",
-			"description": "Конвертируйте Unix timestamps, ISO даты и миллисекунды. Локальное время или UTC.",
+			"description": "Конвертация Unix timestamps, ISO дат и миллисекунд. Работайте с локальным временем или UTC.",
 			"tags": ["Unix", "ISO 8601", "Часовой пояс"]
 		},
 		"apiRequestBuilder": {
 			"title": "API Request Builder",
-			"description": "Создавайте HTTP запросы и генерируйте код для curl, fetch, axios.",
-			"tags": ["curl", "fetch", "axios"]
+			"description": "Создание HTTP запросов и генерирация кода для curl, fetch, axios или httpie.",
+			"tags": ["curl", "fetch", "axios", "httpie"]
 		},
-		"jsonFormatter": {
+		"jsonFormatter": {	
 			"title": "JSON Formatter",
-			"description": "Форматируйте, минимизируйте, валидируйте и проверяйте JSON с деревом.",
-			"tags": ["Форматирование", "Дерево", "Поиск"]
+			"description": "Форматирование, минимизирование, валидирование и удобная проверка JSON в виде дерева.",
+			"tags": ["Форматирование", "Дерево", "JSON"]
 		},
 		"base64Converter": {
 			"title": "Base64 Converter",
-			"description": "Кодируйте и декодируйте Base64, Base64URL и Hex. Безопасно для UTF-8.",
-			"tags": ["Base64", "Base64URL", "Hex"]
+			"description": "Кодирование и декодирование Base64, Base64URL и Hex. Безопасно для UTF-8.",
+			"tags": ["Base64", "Base64URL", "Hex", "Plain text"]
 		},
 		"urlInspector": {
 			"title": "URL Inspector",
-			"description": "Парсите, проверяйте и создавайте URL. Редактируйте параметры запроса и копируйте чистые URL.",
+			"description": "Парсинг, проверка и создание URL. Редактируйте параметры запроса и копируйте готовые URL-адреса.",
 			"tags": ["Параметры", "Кодирование", "Конструктор"]
 		}
 	},

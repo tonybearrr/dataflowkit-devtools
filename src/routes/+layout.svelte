@@ -41,7 +41,7 @@
 			<div class="h-14 flex items-center justify-between">
 				<a href={getPath('/', langFromPath)} class="flex items-center gap-2 text-lg font-semibold tracking-tight hover:text-[var(--color-accent)] transition-colors">
 					<img src={logo} alt={tStringReactive('common.devToolbox', $locale)} class="h-8 w-auto" />
-					<span class="hidden sm:inline">{tStringReactive('common.devToolbox', $locale)}</span>
+					<span class="sm:inline">{tStringReactive('common.devToolbox', $locale)}</span>
 				</a>
 
 				<nav class="hidden lg:flex items-center gap-6">
@@ -97,8 +97,10 @@
 						aria-label={tStringReactive('common.donate', $locale)}
 						class="px-2 py-1 text-sm font-[100] flex items-center rounded-md bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-colors"
 					>
-						<HeartHandshake class="w-4 h-4 mr-2" />
-						{tStringReactive('common.donate', $locale)}
+						<HeartHandshake class="w-4 h-4 sm:w-4 sm:h-4 sm:mr-2" />
+						<span class="hidden sm:inline">
+							{tStringReactive('common.donate', $locale)}
+						</span>
 					</a>
 					<select
 						value={langFromPath}
@@ -189,9 +191,9 @@
 	</main>
 
 	<footer class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)] py-6">
-		<div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-text-muted)]">
-			<div class="flex items-center gap-4">
-				<p>{tStringReactive('common.privacyFirst', $locale)}</p>
+		<div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 text-sm text-[var(--color-text-muted)]">
+			<div class="flex items-center justify-center">
+				<p class="max-sm:text-center">{tStringReactive('common.privacyFirst', $locale)}</p>
 				
 			</div>
 			<p class="flex items-center gap-2 flex-wrap justify-center sm:justify-end">
