@@ -8,7 +8,7 @@
 		"privacyFirst": "Приватність на першому місці. Без відстеження. Локально.",
 		"noTracking": "Без відстеження",
 		"localOnly": "Локально",
-		"builtBy": "Створено",
+		"builtBy": "Один з інструментів",
 		"moreToolsComing": "Більше інструментів незабаром...",
 		"copy": "Копіювати",
 		"clear": "Очистити",
@@ -27,37 +27,37 @@
 		"title": "Dev Toolbox",
 		"description": "Швидкі інструменти для розробників з акцентом на приватність. Без бекенду. Без відстеження. Все працює локально у вашому браузері.",
 		"jwtInspector": {
-			"title": "JWT Інспектор",
+			"title": "JWT Inspector",
 			"description": "Декодуйте та перевіряйте JSON Web Tokens. Переглядайте заголовок, payload та перевіряйте термін дії.",
 			"tags": ["Base64URL", "Claims", "Термін дії"]
 		},
 		"cronExplainer": {
-			"title": "Cron Пояснювач",
+			"title": "Cron",
 			"description": "Пояснюйте cron вирази простою мовою та переглядайте майбутні виконання.",
 			"tags": ["Планувальник", "Симулятор", "5-полів"]
 		},
 		"timestampConverter": {
-			"title": "Конвертер Часів",
+			"title": "Timestamp Converter",
 			"description": "Конвертуйте Unix timestamps, ISO дати та мілісекунди. Локальний час або UTC.",
 			"tags": ["Unix", "ISO 8601", "Часовий пояс"]
 		},
 		"apiRequestBuilder": {
-			"title": "Конструктор API Запитів",
+			"title": "API Request Builder",
 			"description": "Створюйте HTTP запити та генеруйте код для curl, fetch, axios.",
 			"tags": ["curl", "fetch", "axios"]
 		},
 		"jsonFormatter": {
-			"title": "JSON Форматер",
+			"title": "JSON Formatter",
 			"description": "Форматуйте, мінімізуйте, валідуйте та перевіряйте JSON з деревом.",
 			"tags": ["Форматування", "Дерево", "Пошук"]
 		},
 		"base64Converter": {
-			"title": "Base64 Конвертер",
+			"title": "Base64 Converter",
 			"description": "Кодуйте та декодуйте Base64, Base64URL та Hex. Безпечно для UTF-8.",
 			"tags": ["Base64", "Base64URL", "Hex"]
 		},
 		"urlInspector": {
-			"title": "URL Інспектор",
+			"title": "URL Inspector",
 			"description": "Парсіть, перевіряйте та створюйте URL. Редагуйте параметри запиту та копіюйте чисті URL.",
 			"tags": ["Параметри", "Кодування", "Конструктор"]
 		}
@@ -65,7 +65,7 @@
 	"jwt": {
 		"title": "JWT Інспектор - Dev Toolbox",
 		"description": "Декодуйте та перевіряйте JSON Web Tokens (JWT) локально у вашому браузері. Переглядайте заголовок, payload, перевіряйте термін дії та інше. Дані не відправляються на сервери.",
-		"heading": "JWT Інспектор",
+		"heading": "JWT Inspector",
 		"subtitle": "Декодуйте та перевіряйте JSON Web Tokens локально. Ваші токени ніколи не залишають ваш браузер. Переглядайте заголовок, payload, перевіряйте термін дії та розумійте свої JWT.",
 		"pasteJWT": "Вставте ваш JWT",
 		"showHistory": "Показати історію",
@@ -101,9 +101,9 @@
 		"notVerified": "Не перевірено (тільки клієнтська сторона)"
 	},
 	"cron": {
-		"title": "Cron Пояснювач та Симулятор – Dev Toolbox",
+		"title": "Cron Explainer & Simulator – Dev Toolbox",
 		"description": "Пояснюйте cron вирази простою мовою та переглядайте майбутні виконання у вашому часовому поясі.",
-		"heading": "Cron Пояснювач та Симулятор",
+		"heading": "Cron Explainer & Simulator",
 		"subtitle": "Пояснюйте cron вирази простою мовою та переглядайте майбутні виконання. Цей інструмент підтримує стандартний Linux-стиль 5-полів синтаксис cron, який зазвичай використовується на серверах та в хмарних планувальниках.",
 		"cronExpression": "Cron вираз",
 		"timezone": "Часовий пояс",
@@ -142,9 +142,9 @@
 		"utcTime": "UTC"
 	},
 	"timestamp": {
-		"title": "Конвертер Часів – Dev Toolbox",
+		"title": "Timestamp Converter – Dev Toolbox",
 		"description": "Конвертуйте Unix timestamps, ISO дати та мілісекунди. Переглядайте у локальному часі або UTC миттєво.",
-		"heading": "Конвертер Часів",
+		"heading": "Timestamp Converter",
 		"subtitle": "Конвертуйте між Unix timestamps, ISO 8601 датами та зрозумілими форматами. Всі конвертації відбуваються миттєво у вашому браузері.",
 		"unixTimestamp": "Unix Timestamp",
 		"dateTime": "Дата та Час",
@@ -177,9 +177,9 @@
 		"enterTimestamp": "Введіть timestamp або виберіть дату/час"
 	},
 	"request": {
-		"title": "Конструктор API Запитів – Dev Toolbox",
+		"title": "API Request Builder – Dev Toolbox",
 		"description": "Створюйте API запити та генеруйте код для curl, fetch та axios миттєво. Працює локально, без відстеження.",
-		"heading": "Конструктор API Запитів",
+		"heading": "API Request Builder",
 		"subtitle": "Створюйте HTTP запити візуально та генеруйте фрагменти коду для curl, fetch та axios. Вся обробка відбувається локально у вашому браузері.",
 		"method": "Метод",
 		"url": "URL",
@@ -213,9 +213,9 @@
 		"privacyText": "Цей інструмент працює повністю у вашому браузері. Жодні запити не надсилаються, жодні дані не зберігаються на сервері. Ваші API ключі та токени залишаються приватними."
 	},
 	"json": {
-		"title": "JSON Форматер та Інспектор – Dev Toolbox",
+		"title": "JSON Formatter & Inspector – Dev Toolbox",
 		"description": "Форматуйте, мінімізуйте, валідуйте та перевіряйте JSON локально. Шукайте ключі/значення та копіюйте чистий вивід миттєво.",
-		"heading": "JSON Форматер та Інспектор",
+		"heading": "JSON Formatter & Inspector",
 		"subtitle": "Форматуйте, валідуйте та перевіряйте JSON з візуальним деревом. Шукайте ключі та значення миттєво. Вся обробка відбувається локально у вашому браузері.",
 		"input": "JSON Ввід",
 		"output": "Вивід",
@@ -255,9 +255,9 @@
 		"privacyText": "Цей інструмент працює повністю у вашому браузері. Жодні JSON дані не надсилаються на сервер. Ваші дані залишаються приватними."
 	},
 	"base64": {
-		"title": "Base64 Конвертер - Dev Toolbox",
+		"title": "Base64 Converter – Dev Toolbox",
 		"description": "Кодуйте та декодуйте Base64, Base64URL та Hex локально. Безпечно для UTF-8. Конвертуйте між варіантами та копіюйте результати миттєво.",
-		"heading": "Base64 Конвертер",
+		"heading": "Base64 Converter",
 		"subtitle": "Кодуйте та декодуйте формати Base64, Base64URL та Hex. Безпечне кодування UTF-8. Всі конвертації відбуваються локально у вашому браузері.",
 		"input": "Ввід",
 		"inputType": "Тип вводу",
@@ -301,9 +301,9 @@
 		"privacyText": "Цей інструмент працює повністю у вашому браузері. Жодні дані не надсилаються на сервер. Ваші дані залишаються приватними."
 	},
 	"url": {
-		"title": "URL Інспектор та Конструктор – Dev Toolbox",
+		"title": "URL Inspector & Builder – Dev Toolbox",
 		"description": "Парсіть, перевіряйте та створюйте URL. Редагуйте параметри запиту, кодуйте значення та копіюйте чисті URL миттєво.",
-		"heading": "URL Інспектор та Конструктор",
+		"heading": "URL Inspector & Builder",
 		"subtitle": "Парсіть URL на компоненти, переглядайте та редагуйте параметри запиту, кодуйте/декодуйте частини URL та перебудовуйте фінальний URL. Вся обробка відбувається локально у вашому браузері.",
 		"enterUrl": "Введіть URL",
 		"example": "Приклад",

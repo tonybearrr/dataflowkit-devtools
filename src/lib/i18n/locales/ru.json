@@ -8,7 +8,7 @@
 		"privacyFirst": "Приватность на первом месте. Без отслеживания. Локально.",
 		"noTracking": "Без отслеживания",
 		"localOnly": "Локально",
-		"builtBy": "Создано",
+		"builtBy": "Один из инструментов",
 		"moreToolsComing": "Больше инструментов скоро...",
 		"copy": "Копировать",
 		"clear": "Очистить",
@@ -27,37 +27,37 @@
 		"title": "Dev Toolbox",
 		"description": "Быстрые инструменты для разработчиков с акцентом на приватность. Без бэкенда. Без отслеживания. Всё работает локально в вашем браузере.",
 		"jwtInspector": {
-			"title": "JWT Инспектор",
+			"title": "JWT Inspector",
 			"description": "Декодируйте и проверяйте JSON Web Tokens. Просматривайте заголовок, payload и проверяйте срок действия.",
 			"tags": ["Base64URL", "Claims", "Срок действия"]
 		},
 		"cronExplainer": {
-			"title": "Cron Объяснятель",
+			"title": "Cron",
 			"description": "Объясняйте cron выражения простым языком и просматривайте будущие выполнения.",
 			"tags": ["Планировщик", "Симулятор", "5-полей"]
 		},
 		"timestampConverter": {
-			"title": "Конвертер Времени",
+			"title": "Timestamp Converter",
 			"description": "Конвертируйте Unix timestamps, ISO даты и миллисекунды. Локальное время или UTC.",
 			"tags": ["Unix", "ISO 8601", "Часовой пояс"]
 		},
 		"apiRequestBuilder": {
-			"title": "Конструктор API Запросов",
+			"title": "API Request Builder",
 			"description": "Создавайте HTTP запросы и генерируйте код для curl, fetch, axios.",
 			"tags": ["curl", "fetch", "axios"]
 		},
 		"jsonFormatter": {
-			"title": "JSON Форматтер",
+			"title": "JSON Formatter",
 			"description": "Форматируйте, минимизируйте, валидируйте и проверяйте JSON с деревом.",
 			"tags": ["Форматирование", "Дерево", "Поиск"]
 		},
 		"base64Converter": {
-			"title": "Base64 Конвертер",
+			"title": "Base64 Converter",
 			"description": "Кодируйте и декодируйте Base64, Base64URL и Hex. Безопасно для UTF-8.",
 			"tags": ["Base64", "Base64URL", "Hex"]
 		},
 		"urlInspector": {
-			"title": "URL Инспектор",
+			"title": "URL Inspector",
 			"description": "Парсите, проверяйте и создавайте URL. Редактируйте параметры запроса и копируйте чистые URL.",
 			"tags": ["Параметры", "Кодирование", "Конструктор"]
 		}

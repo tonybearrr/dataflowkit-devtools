@@ -86,21 +86,9 @@
 					>
 						{tStringReactive('nav.url', $locale)}
 					</a>
-					<a
-						href={getPath('/privacy', langFromPath)}
-						class="text-sm transition-colors {$page.url.pathname.includes('/privacy') ? 'text-[var(--color-text)]' : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'}"
-					>
-						{tStringReactive('common.privacy', $locale)}
-					</a>
 				</nav>
 
 				<div class="flex items-center gap-2 sm:gap-4">
-					<a
-						href={getPath('/about', langFromPath)}
-						class="hidden md:block text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
-					>
-						{tStringReactive('common.madeBy', $locale)}
-					</a>
 					<a
 						href="https://send.monobank.ua/jar/ABUXaikGMB"
 						target="_blank"
@@ -187,20 +175,6 @@
 						>
 							{tStringReactive('nav.url', $locale)}
 						</a>
-						<a
-							href={getPath('/privacy', langFromPath)}
-							onclick={closeMobileMenu}
-							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] {$page.url.pathname.includes('/privacy') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
-						>
-							{tStringReactive('common.privacy', $locale)}
-						</a>
-						<a
-							href={getPath('/about', langFromPath)}
-							onclick={closeMobileMenu}
-							class="px-4 py-2 text-sm transition-colors rounded hover:bg-[var(--color-bg-tertiary)] md:hidden {$page.url.pathname.includes('/about') ? 'text-[var(--color-text)] bg-[var(--color-bg-tertiary)]' : 'text-[var(--color-text-muted)]'}"
-						>
-							{tStringReactive('common.madeBy', $locale)}
-						</a>
 					</div>
 				</nav>
 			{/if}
@@ -213,11 +187,21 @@
 
 	<footer class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)] py-6">
 		<div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-text-muted)]">
-			<p>{tStringReactive('common.privacyFirst', $locale)}</p>
-			<p>
+			<div class="flex items-center gap-4">
+				<p>{tStringReactive('common.privacyFirst', $locale)}</p>
+				
+			</div>
+			<p class="flex items-center gap-2 flex-wrap justify-center sm:justify-end">
 				{tStringReactive('common.builtBy', $locale)}{' '}
-				<a href={getPath('/about', langFromPath)} class="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors">
-					Anton Bulavenko
+				<a href={'https://dataflowkit.dev'} class="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors">
+					DataflowKit
+				</a>
+				<span class="text-[var(--color-text-muted)]">|</span>
+				<a
+					href={getPath('/privacy', langFromPath)}
+					class="px-3 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] hover:bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] text-[var(--color-text)] transition-colors {$page.url.pathname.includes('/privacy') ? 'bg-[var(--color-bg-tertiary)] border-[var(--color-accent)]' : ''}"
+				>
+					{tStringReactive('common.privacy', $locale)}
 				</a>
 			</p>
 		</div>
