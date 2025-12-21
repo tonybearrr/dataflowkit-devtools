@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"cron-parser": "^5.4.0",
-		"cronstrue": "^3.9.0"
+		"cronstrue": "^3.9.0",
+		"lucide-svelte": "^0.562.0"
 	}
 }

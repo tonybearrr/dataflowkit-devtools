@@ -5,6 +5,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { locale, tStringReactive, getPath, type Locale } from '$lib/i18n';
+	import { HeartHandshake } from 'lucide-svelte';
 
 	let { children } = $props();
 	let mobileMenuOpen = $state(false);
@@ -93,8 +94,10 @@
 						href="https://send.monobank.ua/jar/ABUXaikGMB"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-xs sm:text-sm px-2 sm:px-3 py-1.5 rounded-md bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-colors whitespace-nowrap"
+						aria-label={tStringReactive('common.donate', $locale)}
+						class="px-2 py-1 text-sm font-[100] flex items-center rounded-md bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-colors"
 					>
+						<HeartHandshake class="w-4 h-4 mr-2" />
 						{tStringReactive('common.donate', $locale)}
 					</a>
 					<select
