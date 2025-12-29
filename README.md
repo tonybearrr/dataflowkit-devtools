@@ -48,7 +48,7 @@ All processing happens locally in your browser.
 
 ## 👤 Author
 
-Built and maintained by **[Anton Bulavenko](https://tonylab.dev)**
+Built and maintained by **[Anton Bulavenko](https://tonylab.dev/en)**
 
 ## ☕ Support
 If you find this work useful, you can support independent open source software here:  

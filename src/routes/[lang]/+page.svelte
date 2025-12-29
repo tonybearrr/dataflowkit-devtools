@@ -6,6 +6,8 @@
 	const lang = $derived(($page.params.lang || 'en') as Locale);
 	const baseUrl = 'https://devtools.dataflowkit.dev';
 	const currentUrl = $derived(`${baseUrl}/${lang}`);
+	
+	const tonylabLang = $derived(lang === 'ru' ? 'en' : lang);
 </script>
 
 <svelte:head>
@@ -46,7 +48,7 @@
 			"creator": {
 				"@type": "Person",
 				"name": "Anton Bulavenko",
-				"url": "https://tonylab.dev"
+				"url": "https://tonylab.dev/${tonylabLang}"
 			},
 			"featureList": [
 				"JWT Inspector",
