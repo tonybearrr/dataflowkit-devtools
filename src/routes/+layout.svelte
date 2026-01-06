@@ -6,6 +6,7 @@
 	import { goto } from '$app/navigation';
 	import { locale, tStringReactive, getPath, type Locale } from '$lib/i18n';
 	import { HeartHandshake } from 'lucide-svelte';
+	import { HUB_URL, DEVTOOLS_URL, QATOOLS_URL, FETOOLS_URL } from '$lib/config';
 
 	let { children } = $props();
 	let mobileMenuOpen = $state(false);
@@ -39,10 +40,16 @@
 	<header class="border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)] sticky top-0 z-50">
 		<div class="max-w-6xl mx-auto px-4">
 			<div class="h-14 flex items-center justify-between">
-				<a href={getPath('/', langFromPath)} class="flex items-center gap-2 text-lg font-semibold tracking-tight hover:text-[var(--color-accent)] transition-colors">
-					<img src={logo} alt={tStringReactive('common.devToolbox', $locale)} class="h-8 w-auto" />
-					<span class="sm:inline">{tStringReactive('common.devToolbox', $locale)}</span>
-				</a>
+				<div class="flex items-center gap-2">
+					<a href={HUB_URL} class="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
+						{tStringReactive('common.hub', $locale)}
+					</a>
+					<span class="text-[var(--color-border)]">/</span>
+					<a href={getPath('/', langFromPath)} class="flex items-center gap-2 text-lg font-semibold tracking-tight hover:text-[var(--color-accent)] transition-colors">
+						<img src={logo} alt={tStringReactive('common.devToolbox', $locale)} class="h-8 w-auto" />
+						<span class="sm:inline">{tStringReactive('common.devToolbox', $locale)}</span>
+					</a>
+				</div>
 
 				<nav class="hidden lg:flex items-center gap-6">
 					<a
@@ -197,11 +204,24 @@
 				
 			</div>
 			<p class="flex items-center gap-2 flex-wrap justify-center sm:justify-end">
-				{tStringReactive('common.builtBy', $locale)}{' '}
-				<a href={'https://dataflowkit.dev'} class="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors">
-					DataflowKit
+				<a href={DEVTOOLS_URL} class="hover:text-[var(--color-accent)] transition-colors">
+					{tStringReactive('common.devtools', $locale)}
 				</a>
-				<span class="text-[var(--color-text-muted)]">|</span>
+				<span class="opacity-50">•</span>
+				<a href={QATOOLS_URL} class="hover:text-[var(--color-accent)] transition-colors">
+					{tStringReactive('common.qatools', $locale)}
+				</a>
+				<span class="opacity-50">•</span>
+				<a href={FETOOLS_URL} class="hover:text-[var(--color-accent)] transition-colors">
+					{tStringReactive('common.fetools', $locale)}
+				</a>
+				<span class="text-[var(--color-text-muted)] ml-1">|</span>
+
+                <a href={'https://dataflowkit.dev'} class="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors">
+                    DataflowKit
+				</a>
+				<span class="text-[var(--color-text-muted)] ml-1">|</span>
+
 				<a
 					href={getPath('/privacy', langFromPath)}
 					class="px-3 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] hover:bg-[var(--color-bg-tertiary)] hover:border-[var(--color-accent)] text-[var(--color-text)] transition-colors {$page.url.pathname.includes('/privacy') ? 'bg-[var(--color-bg-tertiary)] border-[var(--color-accent)]' : ''}"

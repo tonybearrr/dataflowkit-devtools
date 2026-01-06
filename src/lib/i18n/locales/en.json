@@ -1,5 +1,9 @@
 {
 	"common": {
+		"hub": "Hub",
+		"devtools": "DEV Tools",
+		"qatools": "QA Tools",
+		"fetools": "FE Tools",
 		"devToolbox": "Dev Toolbox",
 		"madeBy": "Made by Anton",
 		"donate": "Donate",
